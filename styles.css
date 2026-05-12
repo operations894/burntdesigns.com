@@ -223,3 +223,17 @@ input, select, textarea {
   .hero-slab { height: 360px; }
   .floating-tag { position: static; width: auto; margin-top: 18px; }
 }
+.site-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.hero-logo {
+  display: block;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 0 24px;
+  filter: drop-shadow(0 18px 28px rgba(31, 18, 8, .35));
+}
