@@ -223,6 +223,7 @@ input, select, textarea {
   .hero-slab { height: 360px; }
   .floating-tag { position: static; width: auto; margin-top: 18px; }
 }
+
 .site-logo {
   width: 54px;
   height: 54px;
