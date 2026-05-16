@@ -17,3 +17,5 @@ Included features:
 
 To take real online payments:
 Connect the form to Shopify, Square, Stripe, WooCommerce, or a custom backend.
+
+Updated: 2026-05-16 to activate Square inventory features.
