@@ -50,4 +50,27 @@ clearPhoto.addEventListener('click', () => {
 });
 
 menuButton.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// Inventory Fetcher
+async function updateInventory() {
+  const inventoryBadges = document.querySelectorAll('.inventory');
+  inventoryBadges.forEach(async (badge) => {
+    const itemId = badge.getAttribute('data-id');
+    try {
+      const response = await fetch(`/api/inventory?itemId=${itemId}`);
+      const data = await response.json();
+      if (data.count !== undefined) {
+        badge.textContent = data.count > 0 ? `(${data.count} in stock)` : '(Sold Out)';
+        if (data.count === 0) {
+          badge.closest('a').style.opacity = '0.5';
+          badge.closest('a').style.pointerEvents = 'none';
+        }
+      }
+    } catch (err) {
+      console.error('Failed to fetch inventory:', err);
+    }
+  });
+}
+
 updatePreview();
+updateInventory();
